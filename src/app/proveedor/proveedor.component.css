@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("/assets/Imagen/4931029.jpg");
+    background-size: cover;
+}
+
+.navbar {
+    background-color: #7ac6ed; 
+    padding: 10px 30px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.navbar img {
+    height: 80px; 
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 30px; 
+}
+
+.navbar ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size:20px;
+}
+
+.content {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px; /* Aumentar el margen inferior */
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px; /* Aumentar el margen inferior */
+}
+
+.form-container input {
+    margin: 0 10px;
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container input:focus {
+    border-color: #88bdf5; 
+}
+
+.form-container button {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.table-container {
+    margin: auto;
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 15px;
+}
+
+th {
+    background-color: #007bff; 
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e2e6ea; 
+}
+
+td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%; 
+}
+
+.actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actions .edit {
+    background-color: #28a745;
+    color: white;
+}
+
+.actions .delete {
+    background-color: #dc3545;
+    color: white;
+    margin-left: 5px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Favoritos</title>
+    <link rel="stylesheet" href="favoritos.component.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="assets/Imagen/Logo.png" alt="Logo" id="logo">
+        </div>
+        <ul>
+            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/favoritos">Favoritos</a></li>
+            <li><a routerLink="/proveedores">Proveedores</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Favoritos</h2>
+        <div class="grid">
+            <div class="card" *ngFor="let producto of favoritos">
+                <img [src]="producto.imagen" [alt]="producto.nombre">
+                <p>{{ producto.nombre }}</p>
+                <span>${{ producto.precio }}</span>
+                <button (click)="eliminarFavorito(producto)">Eliminar</button>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+
+        <div class="suggestions">
+            <h3>También te puede gustar</h3>
+            <div class="grid">
+                <div class="card">
+                    <img src="/assets/Imagen/cuadernosmuchos.jpg" alt="Cuaderno de rayas">
+                    <p>Cuaderno de rayas</p>
+                    <span>$7.99</span>
+                </div>
+                <div class="card">
+                    <img src="/assets/Imagen/plumas.jpg" alt="Pluma de tinta">
+                    <p>Pluma de tinta</p>
+                    <span>$2.99</span>
+                </div>
+                <div class="card">
+                    <img src="/assets/Imagen/marcadores2.jpg" alt="Set de marcadores">
+                    <p>Set de marcadores</p>
+                    <span>$12.99</span>
+                </div>
+                <div class="card">
+                    <img src="/assets/Imagen/liboboceto.jpg" alt="Cuaderno de bocetos">
+                    <p>Cuaderno de bocetos</p>
+                    <span>$8.99</span>
+                </div>
+                <div class="card">
+                    <img src="/assets/Imagen/borrador.png" alt="Borrador de goma">
+                    <p>Borrador de goma</p>
+                    <span>$3.99</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("/assets/Imagen/view.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.registro-container {
+    background-color: #ffffff;
+    padding: 5%;
+    margin-left: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 400px; 
+    height: auto;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: 1.5em;
+    color: #1565c0; 
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+.Formulario {
+    width: 100%;
+    margin: auto;
+}
+
+.Logo {
+    width: 45%;
+}
+.texto {
+    text-align: center;
+}
+input {
+    padding: 2.5%;
+    margin: 5%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block;
+    width: 90%;
+}
+input:focus {
+    outline: none;
+    border-color: #1976d2; 
+}
+button {
+    padding: 10px;
+    background-color: #1976d2; 
+    color: white;
+    border: none;
+    margin: auto;
+    width: 50%;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 5%;
+}
+button:hover {
+    background-color: #1565c0; 
+}
+.error {
+    color: #d32f2f; 
+    margin-top: 10px;
+    text-align: center;
+}

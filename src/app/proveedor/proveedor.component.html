@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proveedores - Papelería SPP</title>
+    <link rel="stylesheet" href="proveedor.component.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="/assets/Imagen/Logo.png" alt="Logo">
+        </div>
+        <ul>
+            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/favoritos">Favoritos</a></li>
+            <li><a routerLink="/Proveedores">Proveedores</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Gestión de Proveedores</h1>
+
+        <div class="form-container">
+            <input type="text" placeholder="Nombre del proveedor" [(ngModel)]="nuevoProveedor.nombre">
+            <input type="text" placeholder="Información de contacto" [(ngModel)]="nuevoProveedor.contacto">
+            <input type="text" placeholder="Productos que provee" [(ngModel)]="nuevoProveedor.productos">
+            <button (click)="agregarProveedor()">Agregar Proveedor</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Contacto</th>
+                        <th>Productos</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let proveedor of proveedores; let i = index">
+                        <td><img [src]="proveedor.imagen" alt="Proveedor {{i + 1}}"></td>
+                        <td>{{proveedor.nombre}}</td>
+                        <td>{{proveedor.contacto}}</td>
+                        <td>{{proveedor.productos}}</td>
+                        <td class="actions">
+                            <button class="edit" (click)="editarProveedor(i)">Editar</button>
+                            <button class="delete" (click)="eliminarProveedor(i)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<ng-container *ngIf="!isLoginRouter();else loginContent">
+    <div class="container-fluid">
+        <app-header></app-header>
+        <router-outlet />
+        <app-footer></app-footer>
+    </div>
+</ng-container>
+
+<ng-template #loginContent>
+    <router-outlet />
+</ng-template>
+

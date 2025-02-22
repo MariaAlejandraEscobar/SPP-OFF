@@ -1,0 +1,78 @@
+<div class="row justify-content-end">
+  <div class="col-lg-1 col-12">
+    <button class="btn btn-success" (click)="NuevoUsuario()" data-bs-toggle="modal" data-bs-target="#modalUsuario">
+      Nuevo
+    </button>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center" *ngIf="isLoading">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div class="row" *ngIf="!isLoading">
+  <div class="col-12">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Correo</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let us of VectorUsuarios">
+          <th scope="row">{{us.id}}</th>
+          <td>{{us.nombre}}</td>
+          <td>{{us.correo}}</td>
+          <td>
+            <button class="btn btn-warning me-1" data-bs-toggle="modal" data-bs-target="#modalUsuario" 
+              (click)="EditarUsuario(us)">Editar</button>
+            <button class="btn btn-danger" (click)="EliminarUsuario(us)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalUsuario" #modalUsuario data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="modalUsuarioLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalUsuario">{{isNew ? 'Nuevo' : 'Editar'}} Usuario 
+          {{usuarioSeleccionado?.nombre}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Form for Nombre, Correo, and Contraseña -->
+        <form>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" *ngIf="usuarioSeleccionado" class="form-control" id="nombre" name="nombre" 
+              placeholder="Ingrese el nombre" [(ngModel)]="usuarioSeleccionado.nombre">
+          </div>
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>
+            <input type="email" *ngIf="usuarioSeleccionado" class="form-control" id="correo" name="correo" 
+              placeholder="Ingrese el correo" [(ngModel)]="usuarioSeleccionado.correo">
+          </div>
+          <div class="mb-3">
+            <label for="contrasena" class="form-label">Contraseña</label>
+            <input type="password" *ngIf="usuarioSeleccionado" class="form-control" id="contrasena" name="contrasena" 
+              placeholder="Ingrese la contraseña" [(ngModel)]="usuarioSeleccionado.contrasena">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="GuardarUsuario()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
